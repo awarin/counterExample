@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>A simple counter</title>
+        <style>
+            html, body, #root {
+                margin : 0px;
+                width  : 100%;
+                height : 100%;
+            }
+
+            #root {
+                text-align:center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="root">
+            <h1>Welcome to the counter page!</h1>
+            <div id="counter__value">Initializing...</div>
+            <button id="increase__btn" onclick="increaseCounter()">+1</button>
+            <button id="decrease__btn" onclick="decreaseCounter()">-1</button>
+        </div>
+
+        <script>
+            let counter = 0;
+
+            const displayCounterValue = value => {
+                document.getElementById('counter__value').innerText = value;
+            };
+
+            displayCounterValue(counter);
+
+            const increaseCounter = () => {
+                counter++;
+                displayCounterValue(counter);
+            };
+
+            const decreaseCounter = () => {
+                counter--;
+                displayCounterValue(counter);
+            };
+        </script>
+    </body>
+</html>
